@@ -1,7 +1,2 @@
-### Expression Evaluator in Python using Binary Tree
+# Longest Increasing Subsequence
 
-* infix.in -> E = (1+1)*13+10/2
-
-* eval(E)
-
-* file.out -> (1+1)*13+10/2 = 31
