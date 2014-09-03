@@ -92,7 +92,7 @@ void display() {
     //pos of the maximum
     int pos = 0;
 
-    for(i = 1; i < 6; i++) {
+    for(i = 1; i < n; i++) {
 
         if(L[ i ] > max) { 
 
