@@ -3,8 +3,11 @@
 function LIS() {
 
        this.vec = []
+
        this.len = -1
+
        this.L = []
+
        this.output = []
 }
 
@@ -15,8 +18,11 @@ LIS.prototype = {
        set: function( arr ) {
 
             this.vec = arr
+
             this.len = arr.length  
-            for(var i=0;i<this.len;i++) this.L[i] = 0
+
+            for(var i = 0; i < this.len; i++) this.L[ i ] = 0
+
        },
 
        solve: function() {
@@ -30,44 +36,58 @@ LIS.prototype = {
 
        dynamic: function() {
 
-            var n = this.len-1, 
+            var n = this.len - 1, 
+
                 max = 0;
 
-                this.L[n] = 1
+                this.L[ n ] = 1
                 
-                for(var i=n-1;i>=0;i--) {
+                for(var i = n - 1; i >= 0; i--) {
+
                         max = 0
-                        for(var j=i+1;j<=n;j++) {
-                                if(this.vec[j]>=this.vec[i] && this.L[j]>max) {
-                                   max = this.L[j] 
+
+                        for(var j = i + 1; j <= n; j++) {
+
+                                if(this.vec[ j ] >= this.vec[ i ] && this.L[ j ] > max) {
+
+                                   max = this.L[ j ] 
                                 }
                         } 
-                        this.L[i] = 1 + max 
+
+                        this.L[ i ] = 1 + max 
                 }
        },
 
        getSubseq: function() {
 
-            var max = this.L[0], 
+            var max = this.L[ 0 ], 
+
                 posMax = 0, 
+
                 output = [], 
+
                 k = 0
 
-                for(var i=1;i<this.L.length;i++) {
+                for(var i = 1; i < this.L.length; i++) {
 
-                    if(this.L[i] > max) {
-                       max = this.L[i]
+                    if(this.L[ i ] > max) {
+
+                       max = this.L[ i ]
+
                        posMax = i
                     } 
                 }
                                 
-            output[k++] = this.vec[posMax]
+            output[ k++ ] = this.vec[ posMax ]
 
-            for(var j=posMax+1;j<=this.L.length;j++) {
+            max--
 
-                    if(this.vec[j]>this.vec[posMax] && this.L[j] == max-1) {
+            for(var j = posMax + 1; j <= this.L.length; j++) {
 
-                          output[k++] = this.vec[j]
+                    if(this.vec[ j ] > this.vec[ posMax ] && this.L[ j ] == max) {
+
+                          output[ k++ ] = this.vec[ j ]
+
                           max--
                     }
                     
@@ -84,6 +104,10 @@ LIS.prototype = {
        toArray: function() {
 
                 return this.output
-       }
-        
+       },
+
+       getLength: function() {
+
+                return this.output.length; 
+       }        
 }

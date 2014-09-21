@@ -96,24 +96,30 @@ class LIS:
 
        n = self.len - 1
 
-       max = self.L[0]
+       max = self.L[ 0 ]
 
        posMax = 0
  
-       for k in range(1, n+1):
+       for k in range(1, n + 1):
 
            if self.L[k] > max:
-              max, posMax = self.L[k], k
 
-       print self.arr[posMax]
+              max, posMax = self.L[ k ], k
+
+       print self.arr[ posMax ]
+
        self.output.append( self.arr[posMax] )  
 
-       for i in range(posMax+1,n+1):
+       max-- 
 
-           if self.arr[i] >= self.arr[posMax] and self.L[i] == max-1:
+       for i in range(posMax + 1, n + 1):
+
+           if self.arr[i] >= self.arr[posMax] and self.L[i] == max:
 
               self.output.append( self.arr[i] )  
+
               print self.arr[i]
+
               max = max - 1     
 
    def write(self):
