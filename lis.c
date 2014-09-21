@@ -53,12 +53,12 @@ void readFromFile(const char *filename) {
 
     fscanf(fin, "%d", &n); 
      
-    for(i=0;i<n;i++) {
+    for( i = 0; i < n; i++) {
 
-        fscanf(fin,"%d",&v[i]);
+        fscanf(fin,"%d", &v[ i ]);
     }
 
-    fclose(fin);
+    fclose( fin );
 }
 
 
@@ -72,12 +72,12 @@ void solve_dynamic_programming() {
 
         for(j = i + 1; j <= n - 1; j++) {
 
-            if(v[i] <= v[j] && L[j] > max) {
+            if(v[ i ] <= v[ j ] && L[ j ] > max) {
 
-               max = L[j];
+               max = L[ j ];
             }
         }
-            L[i] = 1 + max;
+            L[ i ] = 1 + max;
     }  
 }
 
@@ -102,22 +102,27 @@ void display() {
         } 
     }   
 
-    printf("Longest Increasing subsequence %d", max);
-    fprintf(fout,"Longest Increasing subsequence %d", max);
+    printf("Longest Increasing SubSequence Length -> %d", max);
 
-    printf("\n%d ", v[pos]);
-    fprintf(fout,"\n%d ", v[pos]);
+    fprintf(fout,"Longest Increasing Subsequence %d", max);
+
+    printf("\n%d ", v[ pos ]);
+
+    fprintf(fout,"\n%d ", v[ pos ]);
+
+    max--;
     
-    for(k = 1; k < n; k++) {
+    for(k = pos + 1; k < n; k++) {
 
-        if(L[k] == max-1 && v[k] >= v[ pos ]) {
+        if(L[ k ] == max && v[k] >= v[ pos ]) {
 
-           printf("%d ",v[k]);
-           fprintf(fout,"%d ",v[k]);
+           printf("%d ",v[ k ]);
+
+           fprintf(fout, "%d ", v[ k ]);
 
            max--;
         }
     }    
 
-    fclose(fout);
+    fclose( fout );
 }
