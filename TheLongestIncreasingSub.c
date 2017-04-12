@@ -1,4 +1,4 @@
-//my solution to HackerRank Problem where Complexity Time is O^2 using Dynamic Programming
+//my solution to HackerRank Problem where Complexity Time is O(n^2) using Dynamic Programming.
 //Terminated doe to Timeout
 
 #include <stdio.h>
