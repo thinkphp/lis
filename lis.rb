@@ -67,10 +67,11 @@ def lis( v )
                        }     
                        [sol, get_max_stored]                    
 end
-
-# print lis([11,55,22,7,8,1,88,100])
-out = lis([10,9,2,5,3,7,101,18])
-print "The Longest increasing subsequence increasing -> "
+input = [10,9,2,5,3,7,101,18]
+print "Input -> "
+p input
+out = lis(input)
+print "The Longest Increasing Subsequence -> "
 p out[0]
 print "The length is -> "
 p out[1]
