@@ -2,7 +2,9 @@ package main
 
 import "fmt"
 
-func findMinMax(v [100]int, size int) (max, pos int) {
+const DIM int = 100
+
+func findMinMax(v [ DIM ]int, size int) (max, pos int) {
 
      max = 0
      
@@ -21,11 +23,11 @@ func findMinMax(v [100]int, size int) (max, pos int) {
      return 
 }
 
-func dynamic_programming(seq []int, n int) (out []int){
+func dynamic_programming(seq []int, n int) (sol []int){
 
      var max int                
     
-     lens := [100]int{}          
+     lens := [ DIM ]int{}          
 
      lens[ n - 1 ] = 1    
 
@@ -44,8 +46,7 @@ func dynamic_programming(seq []int, n int) (out []int){
          lens[i] = 1 + max;
      }     
 
-     sol := []int{}
-
+    
      maxx, pos := findMinMax(lens, n)
 
      sol = append(sol, seq[pos])
@@ -64,14 +65,16 @@ func dynamic_programming(seq []int, n int) (out []int){
          } 
      }
      
-     return sol
+     return
 }
 
 func main() {
 
-     var seq = []int{50, -1, 3, 10, 7, 40, 80}      
+     var seq = []int{50, -1, 3, 10, 8, 7, 40, 80}      
 
      size := len( seq )
+     
+     fmt.Println("Initial Sequence -> ", seq)
      
      fmt.Println(dynamic_programming(seq, size))
 }
