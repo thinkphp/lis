@@ -9,3 +9,4 @@
   * https://en.wikipedia.org/wiki/Longest_increasing_subsequence
   * https://ideone.com/5qDk2w
   * https://ideone.com/NhMThI
+  * https://replit.com/@thinkphp/lis
