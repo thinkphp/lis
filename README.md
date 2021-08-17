@@ -10,3 +10,4 @@
   * https://ideone.com/5qDk2w
   * https://ideone.com/NhMThI
   * https://replit.com/@thinkphp/lis
+  * Time Complexity N Log N -> https://replit.com/@thinkphp/lis#lis_nlogn.cpp 
