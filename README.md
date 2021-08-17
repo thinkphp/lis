@@ -12,3 +12,4 @@
   * https://replit.com/@thinkphp/lis
   * Time Complexity O(N Log N) -> https://replit.com/@thinkphp/lis#lis_nlogn.cpp 
   * Time Complexity O(N^2) -> https://replit.com/@thinkphp/lis#lis_n^2.py
+  * Time Complexity O(N^2) Ruby Implementation -> https://ideone.com/NhMThI
